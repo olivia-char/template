@@ -6,7 +6,7 @@ import {
 
 const ExampleHeader = props => {
   return(
-    <Header>
+    <Header size="large" pad={{"vertical": "medium"}} colorIndex="neutral-1-a" justify='center'>
       <Title>
         {props.title}
       </Title>
@@ -15,3 +15,4 @@ const ExampleHeader = props => {
 }
 
 export default ExampleHeader
+          

@@ -5,7 +5,7 @@ import {
 } from 'grommet';
 import ExampleHeader from '../components/ExampleHeader'
 
-class ExampleContainer extends Component {
+class MainPage extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -19,4 +19,4 @@ class ExampleContainer extends Component {
   }
 }
 
-export default ExampleContainer;
+export default MainPage;

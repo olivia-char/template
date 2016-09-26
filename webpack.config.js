@@ -3,6 +3,7 @@ const Webpack = require('webpack');
 const merge = require('webpack-merge');
 const NpmInstallPlugin = require('npm-install-webpack-plugin');
 
+
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
   app: path.join(__dirname, 'app'),
@@ -27,21 +28,25 @@ const common = {
       {
         test: /\.scss$/,
         loader: 'style!css!sass?outputStyle=expanded&' +
-          'includePaths[]=' +
-          (encodeURIComponent(path.resolve('./node_modules')))
-       },
-      {
-        test: /\.css$/,
-        loader: 'style!css?sourceMap'
+        'includePaths[]='
       },
       {
         test: /\.jsx?$/,
         loaders: ['babel?cacheDirectory'],
         include: [
           PATHS.app
-      ]
-
+        ]
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack?bypassOnDebug&optimizationLevel=0&interlaced=false'
+        ]
+      },
+      {
+        test: /\.json$/, loader: 'json'
+      }
     ]
   }
 };

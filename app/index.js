@@ -6,10 +6,12 @@ import {
   browserHistory,
   IndexRoute
 } from 'react-router';
-import ExampleContainer from './containers/ExampleContainer';
+import MainPage from './containers/MainPage';
+import IntroPage from './containers/IntroPage';
+import './style/main.scss';
 
 const routes = (
- <Route path="/" component={ExampleContainer}/>
+ <Route path="/" component={IntroPage}/>
 )
 
 ReactDOM.render(
