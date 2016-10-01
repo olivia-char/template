@@ -6,17 +6,14 @@ import {
   browserHistory,
   IndexRoute
 } from 'react-router';
-import MainPage from './containers/MainPage';
+import HomePage from './containers/HomePage';
 import IntroPage from './containers/IntroPage';
 import './style/main.scss';
 
-const routes = (
- <Route path="/" component={IntroPage}/>
-)
-
 ReactDOM.render(
     <Router history={browserHistory}>
-      {routes}
+      <Route path="/" component={IntroPage}/>
+      <Route path="/HomePage" component={HomePage}/>
     </Router>,
   document.getElementById('app')
 );
