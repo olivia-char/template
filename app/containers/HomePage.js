@@ -5,11 +5,15 @@ import {
   Box,
   Image,
   Button,
-  Section,
-  Paragraph,
+  Headline
 } from 'grommet';
 import cosmos from '../img/cosmos.png'
+import rocks from '../img/rocks.png'
+import pattern from '../img/pattern.png'
+import books from '../img/books.png'
 import ExampleHeader from '../components/ExampleHeader'
+
+
 
 
 class HomePage extends Component {
@@ -48,10 +52,40 @@ class HomePage extends Component {
         <Button label="Add number" primary={true} colorIndex="light-2" onClick={this.onClickNumberHandler}/>
         <Button label="Toggle catz" primary={true} colorIndex="light-2" onClick={this.onClickHandler}/>*/}
         </Box>
-        <Box style={styles.bgImage} pad="xlarge">
-          <Paragraph colorIndex="light-2">
-            Hello this is an about me page box
-          </Paragraph>
+
+        <Box direction="row">
+          <Box basis="2/3" size={{"height": "medium"}} style={styles.bgImageAboutMe} pad="medium">
+            <Box colorIndex="neutral-1" align="center">
+              <Headline>
+                Hello this is an about me page box
+              </Headline>
+            </Box>
+          </Box>
+
+          <Box style={styles.bgImageBlog} pad="small">
+            <Box colorIndex="neutral-1" align="center">
+              <Headline>
+                Hello this is a blog page box
+              </Headline>
+            </Box>
+          </Box>
+
+          <Box style={styles.bgImageProjects} pad="medium">
+            <Box colorIndex="neutral-1" align="center">
+              <Headline>
+                Hello this is a project page box
+              </Headline>
+            </Box>
+          </Box>
+
+          <Box style={styles.bgImageContact} pad="small">
+            <Box colorIndex="neutral-1" align="center">
+              <Headline>
+                Hello this is a contact page box
+              </Headline>
+            </Box>
+          </Box>
+
         </Box>
       </Box>
     )
@@ -61,7 +95,20 @@ class HomePage extends Component {
 export default HomePage;
 
 const styles = {
-  bgImage: {
+  bgImageAboutMe: {
     backgroundImage: `url(${cosmos})`,
-  }
+    height: 500,
+  },
+  bgImageBlog: {
+    backgroundImage: `url(${rocks})`,
+    height: 500,
+  },
+  bgImageProjects: {
+    backgroundImage: `url(${books})`,
+    height: 500,
+  },
+  bgImageContact: {
+    backgroundImage: `url(${pattern})`,
+    height: 500,
+  },
 }
